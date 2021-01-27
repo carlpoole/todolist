@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Tab1.css';
+import './TodoList.css';
 
-class Tab1 extends Component {
-  API_KEY = 'df12e06f64bb406b852f0459a85ca8a9';
-  API_URL = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`
-
+class TodoList extends Component {
   state: { items: any[] } = {
     items: []
   }
 
   componentDidMount() {
-    axios.get(this.API_URL).then(response => response.data)
-    .then((data) => {
-      this.setState({ items: data.articles })
-      console.log(this.state.items)
-     })
+    // axios.get(this.API_URL).then(response => response.data)
+    // .then((data) => {
+    //   this.setState({ items: data.articles })
+    //   console.log(this.state.items)
+    //  })
   }
 
   render() {
@@ -24,13 +20,13 @@ class Tab1 extends Component {
       <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Heroes</IonTitle>
+          <IonTitle>Todo List</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Heroes</IonTitle>
+            <IonTitle size="large">Todo List</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -59,4 +55,4 @@ class Tab1 extends Component {
   }
 }
 
-export default Tab1;
+export default TodoList;
